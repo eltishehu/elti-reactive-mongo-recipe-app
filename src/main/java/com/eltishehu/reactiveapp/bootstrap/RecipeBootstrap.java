@@ -4,11 +4,7 @@ import com.eltishehu.reactiveapp.domain.*;
 import com.eltishehu.reactiveapp.repositories.CategoryRepository;
 import com.eltishehu.reactiveapp.repositories.RecipeRepository;
 import com.eltishehu.reactiveapp.repositories.UnitOfMeasureRepository;
-import com.eltishehu.reactiveapp.repositories.reactive.CategoryReactiveRepository;
-import com.eltishehu.reactiveapp.repositories.reactive.RecipeReactiveRepository;
-import com.eltishehu.reactiveapp.repositories.reactive.UnitOfMeasureReactiveRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -29,15 +25,6 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     private final CategoryRepository categoryRepository;
     private final RecipeRepository recipeRepository;
     private final UnitOfMeasureRepository unitOfMeasureRepository;
-
-    @Autowired
-    UnitOfMeasureReactiveRepository unitOfMeasureReactiveRepository;
-
-    @Autowired
-    CategoryReactiveRepository categoryReactiveRepository;
-
-    @Autowired
-    RecipeReactiveRepository recipeReactiveRepository;
 
     public RecipeBootstrap(CategoryRepository categoryRepository,
                            RecipeRepository recipeRepository, UnitOfMeasureRepository unitOfMeasureRepository) {

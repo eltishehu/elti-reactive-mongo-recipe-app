@@ -12,7 +12,7 @@ import reactor.core.publisher.Flux;
 @Service
 public class UnitOfMeasureServiceImpl implements UnitOfMeasureService {
 
-    //private final UnitOfMeasureRepository unitOfMeasureRepository;
+    //private final UnitOfMeasureReactiveRepository unitOfMeasureRepository;
 
     private final UnitOfMeasureReactiveRepository unitOfMeasureReactiveRepository;
     private final UnitOfMeasureToUnitOfMeasureCommand unitOfMeasureToUnitOfMeasureCommand;
