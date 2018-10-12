@@ -4,6 +4,8 @@ import com.eltishehu.reactiveapp.domain.*;
 import com.eltishehu.reactiveapp.repositories.CategoryRepository;
 import com.eltishehu.reactiveapp.repositories.RecipeRepository;
 import com.eltishehu.reactiveapp.repositories.UnitOfMeasureRepository;
+import com.eltishehu.reactiveapp.repositories.reactive.CategoryReactiveRepository;
+import com.eltishehu.reactiveapp.repositories.reactive.RecipeReactiveRepository;
 import com.eltishehu.reactiveapp.repositories.reactive.UnitOfMeasureReactiveRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +31,13 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     private final UnitOfMeasureRepository unitOfMeasureRepository;
 
     @Autowired
-    UnitOfMeasureReactiveRepository reactiveRepository;
+    UnitOfMeasureReactiveRepository unitOfMeasureReactiveRepository;
+
+    @Autowired
+    CategoryReactiveRepository categoryReactiveRepository;
+
+    @Autowired
+    RecipeReactiveRepository recipeReactiveRepository;
 
     public RecipeBootstrap(CategoryRepository categoryRepository,
                            RecipeRepository recipeRepository, UnitOfMeasureRepository unitOfMeasureRepository) {
@@ -48,8 +56,10 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         log.debug("Loading Bootstrap Data");
 
 
-        log.error("#######");
-        log.error("Count: " + reactiveRepository.count().block().toString());
+        /*log.error("#######");
+        log.error("UOM Count: " + unitOfMeasureReactiveRepository.count().block().toString());
+        log.error("Category Count: " + categoryReactiveRepository.count().block().toString());
+        log.error("Recipe Count: " + recipeReactiveRepository.count().block().toString());*/
     }
 
     private void loadCategories(){
