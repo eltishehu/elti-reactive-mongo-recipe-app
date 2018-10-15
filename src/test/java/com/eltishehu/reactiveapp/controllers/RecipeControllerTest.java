@@ -5,6 +5,7 @@ import com.eltishehu.reactiveapp.domain.Recipe;
 import com.eltishehu.reactiveapp.exceptions.NotFoundException;
 import com.eltishehu.reactiveapp.services.RecipeService;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -23,6 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Created by jt on 6/19/17.
  */
+@Ignore
 public class RecipeControllerTest {
 
     @Mock
